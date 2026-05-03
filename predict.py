@@ -84,7 +84,7 @@ def _get_model(device):
                 f"Weights not found at '{config.weights_path}'. "
                 "Run train.py first, or place final_weights.pth in checkpoints/."
             )
-        m.load_state_dict(torch.load(config.weights_path, map_location=device))
+        m.load_state_dict(torch.load(config.weights_path, map_location=device, weights_only=True))
         m.eval()
         _cached_model = m
     return _cached_model
