@@ -12,16 +12,14 @@
 import torch.nn as nn
 from torchvision import models
 
-
-class GravLensNet(nn.Module):
-    """
+ """
     ResNet-18 adapted for binary gravitational lens classification.
 
     Args:
         pretrained (bool): Initialise backbone with ImageNet-1K weights.
                            Recommended True — significantly speeds convergence.
     """
-
+class GravLensNet(nn.Module):
     def __init__(self, pretrained: bool = True):
         super().__init__()
         weights       = models.ResNet18_Weights.IMAGENET1K_V1 if pretrained else None
