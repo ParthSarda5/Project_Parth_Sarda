@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # Training loop for the gravitational lens CNN.
 #
-# Main entry point (programmatic):
+# Main entry point:
 #   from train import train_model
 #   train_model(model, num_epochs, train_loader, loss_fn, optimizer)
 #
@@ -61,10 +61,7 @@ def _eval_epoch(model, loader, loss_fn, device):
 
 
 # ── main training function ────────────────────────────────────────────────────
-
-def train_model(model, num_epochs, train_loader, loss_fn, optimizer,
-                val_loader=None, device=None, verbose=True):
-    """
+ """
     Run the full training loop with cosine LR annealing and early stopping.
 
     Args:
@@ -85,6 +82,8 @@ def train_model(model, num_epochs, train_loader, loss_fn, optimizer,
     Side effect:
         Saves the best checkpoint (by val AUC) to config.weights_path.
     """
+def train_model(model, num_epochs, train_loader, loss_fn, optimizer,
+                val_loader=None, device=None, verbose=True):
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
