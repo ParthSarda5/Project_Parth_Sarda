@@ -91,8 +91,6 @@ def _get_model(device):
 
 
 # ── main inference function ───────────────────────────────────────────────────
-
-def predict_lenses(list_of_image_paths: list, device=None) -> list:
     """
     Run inference on a list of image file paths.
 
@@ -113,6 +111,7 @@ def predict_lenses(list_of_image_paths: list, device=None) -> list:
         for r in results:
             print(r['path'], r['prediction'], f"{r['probability']:.3f}")
     """
+def predict_lenses(list_of_image_paths: list, device=None) -> list:
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
