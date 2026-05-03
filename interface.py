@@ -1,7 +1,6 @@
 # interface.py
 # ─────────────────────────────────────────────────────────────────────────────
 # Standardised interface file for the grading program.
-# Do NOT modify the names on the right-hand side of each 'as' alias.
 # ─────────────────────────────────────────────────────────────────────────────
 
 # The model class
