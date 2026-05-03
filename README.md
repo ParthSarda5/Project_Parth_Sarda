@@ -20,7 +20,6 @@
 10. [Interface Reference](#10-interface-reference)
 11. [Configuration](#11-configuration)
 12. [Reproducibility](#12-reproducibility)
-13. [Bugs Fixed](#13-bugs-fixed)
 
 ---
 
@@ -467,16 +466,4 @@ python3 predict.py              # runs inference on data/*.npy example files
 
 ---
 
-## 13. Bugs Fixed
 
-The following bugs were identified and corrected during development:
-
-| File | Bug | Fix |
-|------|-----|-----|
-| `train.py` | `.squeeze()` on logits/labels crashes when `batch_size=1` | Replaced with `.view(-1)` — always safe regardless of batch size |
-| `dataset.py` | `num_workers=2` breaks on Windows and in Jupyter notebooks | Hardcoded to `0` |
-| `dataset.py` | `pin_memory=True` with `num_workers=0` raises a PyTorch performance warning | Conditioned on `num_workers > 0` |
-| `predict.py` | `torch.load()` without `weights_only=True` raises `FutureWarning` in PyTorch 2.x | Added `weights_only=True` |
-| `data/*.npy` | Example files were Gaussian blobs from a quick numpy script — different pipeline from training data | Regenerated using the actual `lenstronomy` simulator for consistency |
-| `checkpoints/final_weights.pth` | File was a plain text placeholder, not a valid PyTorch state dict | Replaced with a real `torch.save()` output |
-| `checkpoints/final_weights.pth` | State dict was saved from raw `torchvision.models.resnet18()` — key names like `conv1.*` — but `GravLensNet` wraps it under `backbone.*`, causing 120+ key mismatches on load | Saved from `GravLensNet.state_dict()` so key names match exactly |
