@@ -77,6 +77,14 @@ Project_Parth_Sarda/
 │   ├── nonlens_10.npy           ─┘
 │   └── preview.png              ← visual grid of all 20 example images
 │
+├── results/
+│   ├── confusion_matrix.png
+│   ├── grad_cam_activation_map.png                   ← all hyperparameters and file paths
+│   ├── metrics_bar.png                ← LensDataset class + get_dataloader()
+│   ├── roc_curve.png           ← simulate full training dataset
+│   ├── sample_images.png                    ← GravLensNet architecture definition
+│   ├── training_curves.png                ← train_model() training loop
+│         
 ├── config.py                    ← all hyperparameters and file paths
 ├── dataset.py                   ← LensDataset class + get_dataloader()
 ├── generate_data.py             ← simulate full training dataset
@@ -84,6 +92,7 @@ Project_Parth_Sarda/
 ├── train.py                     ← train_model() training loop
 ├── predict.py                   ← predict_lenses() inference function
 ├── interface.py                 ← standardised grading interface
+├──Project_Parth_Sarda.ipynb     ← working of all aspects of the project, along with plots of the results
 └── README.md
 ```
 
