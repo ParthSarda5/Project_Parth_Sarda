@@ -1,8 +1,7 @@
 # config.py
 # ─────────────────────────────────────────────────────────────────────────────
 # All hyperparameters and dataset configuration for the gravitational lens
-# classification project.  Every other file imports from here — do not
-# hard-code these values elsewhere.
+# classification project.
 # ─────────────────────────────────────────────────────────────────────────────
 
 # ── Image dimensions ──────────────────────────────────────────────────────────
