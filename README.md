@@ -2,7 +2,7 @@
 
 **Course:** Image and Video Processing with Deep Learning  
 **Institution:** IISER Pune, 2026  
-**Student:** Parth Bhatt  
+**Student:** Parth Sarda  
 
 ---
 
@@ -62,7 +62,7 @@ Real confirmed strong lenses are too rare to provide sufficient training data. T
 ## 3. Directory Structure
 
 ```
-project_parth_bhatt/
+Project_Parth_Sarda/
 │
 ├── checkpoints/
 │   └── final_weights.pth        ← trained model weights (44.8 MB)
